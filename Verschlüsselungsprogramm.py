@@ -15,7 +15,7 @@ def dreher(kette):
 
 #die Funktion zur numerischen Verschlüsselung über Ausgabe des ASCII Wertes
 def ascii_code(kette):
-    print("Verschlüsselung durch ASCII Asugabe")
+    print("Verschlüsselung durch ASCII Ausgabe")
     #für jedes Zeichen über ord() den ASCII-Wert ausgeben
     for zeichen in kette:
         print(ord(zeichen),end="")
