@@ -14,3 +14,5 @@ def caesar(kette):
             print(chr((ord(kette[zeichen]) + verschiebung + zeichen - 97) % 26 + 97), end="")
 
     print("\n")
+
+caesar("Viktor")
