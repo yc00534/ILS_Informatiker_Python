@@ -1,6 +1,9 @@
+import time
 from random import randrange
+
+start_time = time.time()
 #die maximale Anzahl der Werte
-anzahl = 2
+anzahl = 5000
 
 #eine leere Liste fuer die Werte
 werte = []
@@ -9,7 +12,7 @@ print("Einfache Maximumauswahl")
 #die Liste füllen, benutzt werden zufällige Zahlen bis 200
 durchlauf = 1
 while durchlauf <= anzahl:
-    werte.append(randrange(1, 201, 1))
+    werte.append(randrange(1, 5000, 1))
     durchlauf = durchlauf +1
 
 #zur Kontrolle ausgeben
@@ -42,3 +45,7 @@ print()
 print("Die sortierte Werte sind: ")
 for wert in werte:
     print(wert, end=" ")
+
+print()
+ende_time = time.time()
+print((ende_time-start_time))
