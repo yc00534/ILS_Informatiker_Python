@@ -19,4 +19,4 @@ while index <= 32:
 
 print(spielkarten)
 print("TYP:", type(spielkarten))
-mischen(spielkarten, wiederholungen=59)
+mischen(spielkarten, wiederholungen=22)
