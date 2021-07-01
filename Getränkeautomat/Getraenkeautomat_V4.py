@@ -91,7 +91,7 @@ class Getraenkeautomat:
         #gibt es noch genügend Flacshen?
         if anzahl <= self.anzahl_flaschen[getraenke_index]:
             print("Sie erhalten", anzahl,"Flasche(n)",self.getraenk[getraenke_index])
-            self.getraenk[getraenke_index]=self.getraenk[getraenke_index]-anzahl
+            self.getraenk[getraenke_index]=self.getraenk[getraenke_index] - anzahl
         else:
             print("Es sind nur noch", self.anzahl_flaschen[getraenke_index], "Flaschen",self.getraenk[getraenke_index],"vorhanden.")
             print("Sie erhalten den Rest")
