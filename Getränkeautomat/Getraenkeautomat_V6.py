@@ -1,8 +1,7 @@
 """''''''''''''''''''''''''''''''''''''''
-Der Getränkeautomat Version 6
-mit der Methode __init__() und __del__()
+Der Getränkeautomat Version 6 mit der Methode __init__() und __del__()
+und mit einer Erweiterung um eine Klasse Getraenke, sowie Anpassung des Berechnung bei der Bezahlung
 ''''''''''''''''''''''''''''''''''''''"""
-
 
 class Getraenke:
     # die Methode init()
@@ -24,6 +23,7 @@ class Getraenke:
     def get_getraenke_anzahl(self):
         return self._getraenke_flaschen_anzahl_
 
+    # die Methode aktualisiert nach dem Verkauf den Bestand
     def set_anzahl(self, gekaufte_Menge):
         self._getraenke_flaschen_anzahl_ = self._getraenke_flaschen_anzahl_ - gekaufte_Menge
 
@@ -60,13 +60,15 @@ class Muenzeneinheit:
 
 # die Vereinbahrung der Klasse für den Automaten
 class Getraenkeautomat:
+    # eine Liste für die Getränkenahmen
+    getraenkeListe = []
+
     # Getränke werden erzeugt
     getraenk1 = Getraenke("Limonade", 10, 10)
     getraenk2 = Getraenke("Wasser", 8, 10)
     getraenk3 = Getraenke("Bier", 13, 10)
 
-    getraenkeListe = []
-
+    #Getränke werden eingetragen
     getraenkeListe.append(getraenk1)
     getraenkeListe.append(getraenk2)
     getraenkeListe.append(getraenk3)
@@ -83,6 +85,7 @@ class Getraenkeautomat:
     def __del__(self):
         print("Eine Instanz der Klasse Getraenkeautomat wurde gelöscht.")
 
+
     def getraenke_waehlen(self):
         # die Auswahl
         print("Bitte wählen Sie ein Getränkt.")
@@ -98,8 +101,8 @@ class Getraenkeautomat:
 
         #Bestandsprüfung/Bestandsermittlung
         lagerbestand = getraenk_auswahl.get_getraenke_anzahl()
-        # gibt es Flaschen von dem Gewaeltem Getränk?
 
+        # gibt es Flaschen von dem Gewaeltem Getränk?
         if lagerbestand <= 0:
             print("Das gewählte Getränkt ist leider nicht mehr vorhanden.")
             auswahl = -1
